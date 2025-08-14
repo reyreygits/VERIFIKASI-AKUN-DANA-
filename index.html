@@ -2,40 +2,46 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Prediksi Togel Cambodia Hari Ini</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prediksi Togel – Fetch dari Apps Script</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .prediksi-container { max-width: 600px; margin: auto; }
-    .title { text-align: center; margin-bottom: 20px; }
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
-    .grid div { background: #f8f8f8; padding: 10px; border-radius: 4px; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-    th { background: #f0f0f0; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .result { margin-top: 20px; }
+    .loading { color: gray; }
+    .error { color: red; }
   </style>
 </head>
 <body>
-  <div class="prediksi-container">
-    <h1 class="title">Prediksi Togel Cambodia — 19 Februari 2024</h1>
-    <div class="grid">
-      <div><strong>Angka Main:</strong> 6379</div>
-      <div><strong>Angka Ikut:</strong> 7650</div>
-      <div><strong>Colok Bebas:</strong> 6</div>
-      <div><strong>Kepala:</strong> 30</div>
-      <div><strong>Ekor:</strong> 95</div>
-      <div><strong>Shio:</strong> Kuda</div>
-    </div>
-    <h2>Angka Jitu 2D</h2>
-    <table>
-      <tr><th>2D Angka</th><td>63, 67, 69, 65, 60, 36, ...</td></tr>
-    </table>
-    <h2>Jadwal Pasaran</h2>
-    <table>
-      <thead><tr><th>Pasaran</th><th>Last Result</th><th>Jam LiveDraw</th></tr></thead>
-      <tbody>
-        <tr><td>Cambodia</td><td>—</td><td>11:30 – 11:50</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <h1>Prediksi Togel Hari Ini</h1>
+  <button id="btn-fetch">Ambil Prediksi</button>
+  <div id="status" class="loading"></div>
+  <div id="result" class="result"></div>
+
+  <script>
+    const btn = document.getElementById('btn-fetch');
+    const status = document.getElementById('status');
+    const result = document.getElementById('result');
+
+    btn.addEventListener('click', () => {
+      status.textContent = 'Mengambil data...';
+      result.innerHTML = '';
+      fetch('https://script.google.com/macros/s/AKfycby5k4JBIoqjp2VxospgLVQYEJZM_QECsUznnDMSq0wVY97cr19Gl27R5kiUO1j3tl47vA/exec')
+        .then(res => res.json())
+        .then(data => {
+          status.textContent = '';
+          // Contoh tampilkan data respons
+          // Misalnya data: { angkaMain: "1234", colok: "5" }
+          result.innerHTML = `
+            <p><strong>Angka Main:</strong> ${data.angkaMain || '-'}</p>
+            <p><strong>Colok Bebas:</strong> ${data.colok || '-'}</p>
+            <!-- dan seterusnya -->
+          `;
+        })
+        .catch(err => {
+          status.textContent = '';
+          result.innerHTML = `<p class="error">Gagal mengambil data: ${err}</p>`;
+        });
+    });
+  </script>
 </body>
 </html>
