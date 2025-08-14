@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prediksi Setiap Hari – GloryGame99</title>
   <style>
     :root {
@@ -17,30 +17,19 @@
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
     }
-
-    header {
-      background-color: var(--bg);
-      padding: 20px;
-    }
-
     .register-box {
       display: flex;
       justify-content: center;
       background: var(--panel);
       padding: 16px;
     }
-
     .register-button {
       background-color: var(--accent-2);
       color: #000;
@@ -52,42 +41,46 @@
       box-shadow: var(--shadow);
       transition: background-color 0.3s ease;
     }
-
     .register-button:hover {
       background-color: #0099cc;
     }
-
+    header {
+      background-color: var(--bg);
+      padding: 20px 0;
+    }
     .header-content {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
     }
-
-    .left-side,
-    .right-side {
+    .left-side, .right-side {
       flex: 1;
     }
-
     .logo-container {
-      flex: 2;
+      flex: 0;
       text-align: center;
+      padding: 0 10px;
     }
-
     .logo-container img {
-      height: 160px;
-      width: auto;
-      margin-bottom: 10px;
-      display: inline-block;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
     }
-
     .logo-caption {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--accent);
       font-weight: bold;
+      margin-top: 8px;
     }
-
+    @media (max-width: 480px) {
+      .logo-caption {
+        font-size: 1.2rem;
+      }
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -96,7 +89,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .card {
       background: var(--card);
       border: 1px solid var(--card2);
@@ -104,33 +96,28 @@
       padding: 16px;
       box-shadow: var(--shadow);
     }
-
     .card h3 {
       margin: 0 0 6px;
       font-size: 18px;
       color: var(--accent);
     }
-
     .sub {
       opacity: .85;
       font-size: 12px;
       color: var(--muted);
     }
-
     .link {
       font-weight: 700;
       color: var(--accent-2);
       text-decoration: none;
       font-size: 12px;
     }
-
     .chips {
       display: flex;
       gap: 10px;
       margin: 12px 0 10px;
       flex-wrap: wrap;
     }
-
     .chip {
       width: 40px;
       height: 40px;
@@ -141,12 +128,10 @@
       background: var(--accent-2);
       color: #000;
     }
-
     .actions {
       display: flex;
       gap: 10px;
     }
-
     button {
       cursor: pointer;
       padding: 10px 14px;
@@ -156,13 +141,11 @@
       background: var(--accent);
       color: #000;
     }
-
     .ghost {
       background: transparent;
       border: 1px solid var(--accent);
       color: var(--accent);
     }
-
     .full {
       margin-top: 10px;
       display: none;
@@ -170,13 +153,11 @@
       padding: 10px;
       border-radius: 12px;
     }
-
     .rows {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
     }
-
     .row {
       background: rgba(255,255,255,.05);
       padding: 8px 10px;
@@ -186,117 +167,49 @@
   </style>
 </head>
 <body>
-
-  <!-- Tombol Daftar di atas -->
   <div class="register-box">
     <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" class="register-button">Klik Daftar Sekarang</a>
   </div>
-
   <header>
     <div class="header-content">
       <div class="left-side"></div>
       <div class="logo-container">
-        <img src="images/logo2.png" alt="Logo GloryGame99" />
+        <img src="images/logo2.png" alt="Logo GloryGame99" width="300" height="150" loading="eager" />
         <div class="logo-caption">Update Prediksi Togel Setiap Hari – GloryGame99</div>
       </div>
       <div class="right-side"></div>
     </div>
   </header>
-
   <div class="grid" id="grid"></div>
-
   <script>
-    const games = [
-      'TOTO WUHAN','HK SIANG','MALAYSIA SIANG','MALAYSIA','SINGAPORE','HK LOTTO','SYDNEY LOTTO','TAIWAN','QATAR','MACAU'
-    ];
-
-    function randInt(min,max){
-      return Math.floor(Math.random()*(max-min+1))+min;
-    }
-
-    function randomDigits(n){
-      return Array.from({length:n},()=>randInt(0,9));
-    }
-
-    function makeCombos(nDigit,count=10){
-      return Array.from({length:count},()=>randomDigits(nDigit).join(''));
-    }
-
-    function chip(num){
-      const el=document.createElement('div');
-      el.className='chip';
-      el.textContent=num;
-      return el;
-    }
-
+    const games = ['TOTO WUHAN','HK SIANG','MALAYSIA SIANG','MALAYSIA','SINGAPORE','HK LOTTO','SYDNEY LOTTO','TAIWAN','QATAR','MACAU'];
+    function randInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+    function randomDigits(n){return Array.from({length:n},()=>randInt(0,9));}
+    function makeCombos(nDigit,count=10){return Array.from({length:count},()=>randomDigits(nDigit).join(''));}
+    function chip(num){const el=document.createElement('div');el.className='chip';el.textContent=num;return el;}
     const grid=document.getElementById('grid');
-
     games.forEach(name=>{
-      const card=document.createElement('div');
-      card.className='card';
-
-      const h3=document.createElement('h3');
-      h3.textContent=name;
-
-      const sub=document.createElement('div');
-      sub.className='sub';
-      sub.textContent=new Date().toLocaleDateString('id-ID');
-
-      const link=document.createElement('a');
-      link.href='#';
-      link.className='link';
-      link.textContent='Prediksi ' + name;
-
-      const chips=document.createElement('div');
-      chips.className='chips';
-      randomDigits(4).forEach(n=>chips.appendChild(chip(n)));
-
-      const actions=document.createElement('div');
-      actions.className='actions';
-
-      const btnSpin=document.createElement('button');
-      btnSpin.textContent='SPIN';
+      const card=document.createElement('div'); card.className='card';
+      const h3=document.createElement('h3'); h3.textContent=name;
+      const sub=document.createElement('div'); sub.className='sub'; sub.textContent=new Date().toLocaleDateString('id-ID');
+      const link=document.createElement('a'); link.href='#'; link.className='link'; link.textContent='Prediksi '+name;
+      const chips=document.createElement('div'); chips.className='chips'; randomDigits(4).forEach(n=>chips.appendChild(chip(n)));
+      const actions=document.createElement('div'); actions.className='actions';
+      const btnSpin=document.createElement('button'); btnSpin.textContent='SPIN';
       btnSpin.onclick=()=>{
-        chips.innerHTML='';
-        randomDigits(4).forEach(n=>chips.appendChild(chip(n)));
-
-        list.innerHTML='';
-        makeCombos(4).forEach(s=>{
-          const r=document.createElement('div');
-          r.className='row';
-          r.textContent=s;
-          list.appendChild(r);
-        });
+        chips.innerHTML=''; randomDigits(4).forEach(n=>chips.appendChild(chip(n)));
+        list.innerHTML=''; makeCombos(4).forEach(s=>{const r=document.createElement('div');r.className='row';r.textContent=s;list.appendChild(r);});
       };
-
-      const btnFull=document.createElement('button');
-      btnFull.textContent='FULL';
-      btnFull.className='ghost';
-      btnFull.onclick=()=>{
-        full.style.display=full.style.display==='block'?'none':'block';
-      };
-
-      actions.append(btnSpin,btnFull);
-
-      const full=document.createElement('div');
-      full.className='full';
-
-      const list=document.createElement('div');
-      list.className='rows';
-
-      makeCombos(4).forEach(s=>{
-        const r=document.createElement('div');
-        r.className='row';
-        r.textContent=s;
-        list.appendChild(r);
-      });
-
+      const btnFull=document.createElement('button'); btnFull.textContent='FULL'; btnFull.className='ghost';
+      btnFull.onclick=()=>{full.style.display=full.style.display==='block'?'none':'block';};
+      actions.append(btnSpin, btnFull);
+      const full=document.createElement('div'); full.className='full';
+      const list=document.createElement('div'); list.className='rows';
+      makeCombos(4).forEach(s=>{const r=document.createElement('div'); r.className='row'; r.textContent=s; list.appendChild(r);});
       full.appendChild(list);
-
-      card.append(h3,sub,link,chips,actions,full);
+      card.append(h3, sub, link, chips, actions, full);
       grid.appendChild(card);
     });
   </script>
-
 </body>
 </html>
