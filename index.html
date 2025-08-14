@@ -29,6 +29,8 @@
         .then(res => res.json())
         .then(data => {
           status.textContent = '';
+          // Contoh tampilkan data respons
+          // Misalnya data: { angkaMain: "1234", colok: "5" }
           result.innerHTML = `
             <p><strong>Angka Main:</strong> ${data.angkaMain || '-'}</p>
             <p><strong>Colok Bebas:</strong> ${data.colok || '-'}</p>
