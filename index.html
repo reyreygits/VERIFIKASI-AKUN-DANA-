@@ -3,280 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prediksi Glorygame99 Setiap Hari – Demo</title>
+  <title>Prediksi Setiap Hari – GloryGame99</title>
   <style>
     :root{
-      --bg:#00008B;
-      --panel:#FFFE7A;/
-      --card:#694c1a;/
-      --card2:#8b6a26;/
-      --accent:#f6c76b;/
-      --accent-2:#ffdf8a;
-      --text:#f7f7f7;
-      --muted:#c3b07d;
+      --bg:#0a0d2c; /* biru gelap */
+      --panel:#1c224a; /* biru tua */
+      --card:#2d3b7a; /* biru medium */
+      --card2:#3c4c9e; /* biru terang */
+      --accent:#ffcc00; /* kuning emas */
+      --accent-2:#00bfff; /* biru terang */
+      --text:#ffffff;
+      --muted:#c0c0c0;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0; font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-      background: radial-gradient(1200px 800px at 20% 10%, #151522, transparent 60%),
-                  radial-gradient(1000px 700px at 80% 0%, #181628, transparent 60%),
-                  var(--bg);
+      margin:0; font-family:Arial, sans-serif;
+      background: var(--bg);
       color:var(--text);
-      overflow-x:hidden;
     }
-    /* Bintang-bintang halus */
-    .stars{position:fixed; inset:0; pointer-events:none; background:
-      radial-gradient(2px 2px at 10% 20%, #ffd56a 40%, transparent 41%),
-      radial-gradient(1.5px 1.5px at 35% 5%, #ffe39e 40%, transparent 41%),
-      radial-gradient(1.7px 1.7px at 70% 15%, #fff1bc 40%, transparent 41%),
-      radial-gradient(1.2px 1.2px at 85% 40%, #ffe39e 40%, transparent 41%),
-      radial-gradient(1.6px 1.6px at 55% 60%, #ffd56a 40%, transparent 41%),
-      radial-gradient(1.3px 1.3px at 15% 70%, #fff1bc 40%, transparent 41%),
-      radial-gradient(1.4px 1.4px at 80% 85%, #ffe39e 40%, transparent 41%),
-      radial-gradient(1.2px 1.2px at 30% 90%, #ffe39e 40%, transparent 41%);
-      opacity:.5; filter: drop-shadow(0 0 2px #f8da86);
-    }
-
     header{
-      position:sticky; top:0; z-index:10; backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,0));
+      padding:20px; text-align:center;
     }
-    .wrap{max-width:1200px; margin:0 auto; padding:20px 16px;}
-    .title{
-      display:flex; align-items:center; gap:14px; justify-content:center; text-align:center;
-      font-weight:800; letter-spacing:.5px; font-size: clamp(20px, 2.6vw, 32px);
+    header img{
+      height:50px;
     }
-    .title .logo{width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow:0 0 0 4px rgba(255,214,120,.15),0 10px 25px rgba(0,0,0,.35)}
-
-    .grid{display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:18px; margin-top:14px}
-    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:980px){.grid{grid-template-columns:repeat(3,1fr)}}
-
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; padding:20px;}
     .card{
-      background: linear-gradient(180deg, rgba(255,214,120,.12), rgba(255,214,120,.02)) ,
-                  #1a1409;
-      border:1px solid rgba(255,214,120,.18);
+      background: var(--card);
+      border:1px solid var(--card2);
       border-radius:var(--radius);
-      padding:16px; box-shadow: var(--shadow); position:relative; overflow:hidden;
+      padding:16px; box-shadow: var(--shadow);
     }
-    .card:before{content:""; position:absolute; inset:auto -25% -55px -25%; height:120px; background:radial-gradient(370px 140px at 50% 0%, rgba(255,214,120,.15), transparent 60%)}
-
-    .card h3{margin:0 0 6px; font-size:18px; letter-spacing:.5px}
-    .sub{opacity:.85; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:8px}
+    .card h3{margin:0 0 6px; font-size:18px; color:var(--accent);}
+    .sub{opacity:.85; font-size:12px; color:var(--muted);}
     .link{font-weight:700; color:var(--accent-2); text-decoration:none; font-size:12px}
-
     .chips{display:flex; gap:10px; margin:12px 0 10px; flex-wrap:wrap}
     .chip{
       width:40px; height:40px; border-radius:50%; display:grid; place-items:center; font-weight:800;
-      border:1px solid rgba(255,255,255,.15);
-      background:radial-gradient(circle at 30% 25%, rgba(255,255,255,.15), transparent 35%),
-                 linear-gradient(180deg, rgba(255,214,120,.12), rgba(0,0,0,.25));
-      text-shadow:0 1px 0 rgba(0,0,0,.45);
-      user-select:none;
+      background:var(--accent-2); color:#000;
     }
-
     .actions{display:flex; gap:10px}
     button{
-      appearance:none; border:none; cursor:pointer; padding:10px 14px; border-radius:12px; font-weight:800;
-      background:linear-gradient(180deg, #f6c76b, #e7b24b); color:#222; box-shadow:0 8px 20px rgba(246,199,107,.25);
-      transition:transform .08s ease, filter .2s ease; letter-spacing:.3px
+      cursor:pointer; padding:10px 14px; border-radius:12px; font-weight:800; border:none;
+      background:var(--accent); color:#000;
     }
-    button:hover{filter:brightness(1.05)}
-    .ghost{background:rgba(255,255,255,.06); color:#fff; border:1px solid rgba(255,255,255,.15); box-shadow:none}
-    button:active{transform:translateY(1px)}
-
-    .full{margin-top:10px; display:none; background:rgba(0,0,0,.25); border:1px dashed rgba(255,214,120,.25);
-      padding:10px; border-radius:12px; max-height:260px; overflow:auto}
-    .full h4{margin:0 0 8px; font-size:12px; color:var(--muted)}
+    .ghost{background:transparent; border:1px solid var(--accent); color:var(--accent)}
+    .full{margin-top:10px; display:none; background:rgba(0,0,0,.25); padding:10px; border-radius:12px;}
     .rows{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px}
-    .row{background:rgba(255,255,255,.05); padding:8px 10px; border-radius:10px; font-weight:700; letter-spacing:1px;
-      display:flex; align-items:center; justify-content:space-between}
-
-    .toolbar{display:flex; gap:10px; align-items:center; justify-content:space-between; margin:10px 0 0}
-    .toolbar label{font-size:12px; color:var(--muted)}
-    select{background:rgba(255,255,255,.06); color:#fff; border:1px solid rgba(255,255,255,.15); border-radius:10px; padding:6px 10px}
-
-    .footer{opacity:.6; text-align:center; font-size:12px; padding:24px 10px}
+    .row{background:rgba(255,255,255,.05); padding:8px 10px; border-radius:10px; font-weight:700;}
   </style>
 </head>
 <body>
-  <div class="stars"></div>
   <header>
-    <div class="wrap">
-      <div class="title"><div class="logo"></div><div>🔔 <span style="color:var(--accent)">PREDIKSI</span> SETIAP HARI</div></div>
-    </div>
+    <img src="logo.png" alt="GloryGame99">
   </header>
 
-  <main class="wrap">
-    <div class="toolbar">
-      <div>
-        <label>Tanggal: </label>
-        <span id="today"></span>
-      </div>
-      <div>
-        <label>Digit:</label>
-        <select id="digitSelect" title="Jumlah digit untuk SPIN (2D/3D/4D)">
-          <option value="2">2D</option>
-          <option value="3">3D</option>
-          <option value="4" selected>4D</option>
-        </select>
-        <button id="spinAll">SPIN SEMUA</button>
-      </div>
-    </div>
-
-    <div class="grid" id="grid"></div>
-
-    <div class="footer">Demo UI + RNG (SPIN/FULL). Angka bersifat acak untuk hiburan/latihan tampilan.</div>
-  </main>
+  <div class="grid" id="grid"></div>
 
   <script>
-    // ======= Data Kartu =======
     const games = [
-      { name: 'TOTO MACAU' },
-      { name: 'TOYOTA' },
-      { name: 'SIDNEY' },
-      { name: 'BALLARAT' },
-      { name: 'SINGAPORE' },
-      { name: 'NEW YORK' },
-      { name: 'BOAVISTA' },
-      { name: 'NEWARK' },
-      { name: 'HONGKONG' },
+      'TOTO MACAU','TOYOTA','SIDNEY','BALLARAT','SINGAPORE','NEW YORK','BOAVISTA','NEWARK','HONGKONG'
     ];
+    function randInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+    function randomDigits(n){return Array.from({length:n},()=>randInt(0,9));}
+    function makeCombos(nDigit,count=10){return Array.from({length:count},()=>randomDigits(nDigit).join(''));}
+    function chip(num){const el=document.createElement('div'); el.className='chip'; el.textContent=num; return el;}
+    const grid=document.getElementById('grid');
 
-    // ======= Util Acak =======
-    function randInt(min, max){
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    // Menghasilkan array digit (0-9), boleh duplikat; panjang n
-    function randomDigits(n){
-      const arr = [];
-      for(let i=0;i<n;i++) arr.push(randInt(0,9));
-      return arr;
-    }
-
-    // Membuat N kombinasi angka (mis. 10 baris) sesuai jumlah digit saat ini
-    function makeCombos(nDigit, count=10){
-      const out=[];
-      for(let i=0;i<count;i++){
-        out.push(randomDigits(nDigit).join(''));
-      }
-      return out;
-    }
-
-    // Membuat elemen chip angka
-    function chip(num){
-      const el = document.createElement('div');
-      el.className = 'chip';
-      el.textContent = num;
-      return el;
-    }
-
-    // Render kartu
-    const grid = document.getElementById('grid');
-    const digitSelect = document.getElementById('digitSelect');
-
-    function renderCards(){
-      grid.innerHTML = '';
-      games.forEach((g, idx)=>{
-        const card = document.createElement('div');
-        card.className = 'card';
-
-        const h3 = document.createElement('h3');
-        h3.textContent = '🛸 ' + g.name;
-
-        const sub = document.createElement('div');
-        sub.className = 'sub';
-        sub.innerHTML = `<span>📅 <span>${formatToday()}</span></span>`;
-
-        const link = document.createElement('a');
-        link.href = '#';
-        link.className = 'link';
-        link.textContent = '📌 PREDIKSI ' + g.name;
-
-        const chips = document.createElement('div');
-        chips.className = 'chips';
-        // isi awal
-        randomDigits(Number(digitSelect.value)).forEach(n=> chips.appendChild(chip(n)));
-
-        const actions = document.createElement('div');
-        actions.className = 'actions';
-
-        const btnSpin = document.createElement('button');
-        btnSpin.textContent = 'SPIN';
-        btnSpin.addEventListener('click', ()=>{
-          // animasi kecil
-          chips.style.opacity = .6;
-          setTimeout(()=>{
-            chips.innerHTML = '';
-            randomDigits(Number(digitSelect.value)).forEach(n=> chips.appendChild(chip(n)));
-            chips.style.opacity = 1;
-            // perbarui daftar FULL juga agar konsisten
-            list.innerHTML = '';
-            makeCombos(Number(digitSelect.value), 10).forEach((s,i)=>{
-              const row=document.createElement('div');
-              row.className='row';
-              row.innerHTML = `<span>#${String(i+1).padStart(2,'0')}</span><strong>${s}</strong>`;
-              list.appendChild(row);
-            });
-          }, 120);
-        });
-
-        const btnFull = document.createElement('button');
-        btnFull.textContent = 'FULL';
-        btnFull.className = 'ghost';
-        btnFull.addEventListener('click', ()=>{
-          full.style.display = full.style.display === 'block' ? 'none' : 'block';
-        });
-
-        actions.append(btnSpin, btnFull);
-
-        const full = document.createElement('div');
-        full.className = 'full';
-        const h4 = document.createElement('h4');
-        h4.textContent = 'Kombinasi acak (otomatis saat SPIN)';
-        const list = document.createElement('div');
-        list.className = 'rows';
-        makeCombos(Number(digitSelect.value), 10).forEach((s,i)=>{
-          const row=document.createElement('div'); row.className='row';
-          row.innerHTML = `<span>#${String(i+1).padStart(2,'0')}</span><strong>${s}</strong>`;
-          list.appendChild(row);
-        });
-        full.append(h4, list);
-
-        card.append(h3, sub, link, chips, actions, full);
-        grid.appendChild(card);
-      });
-    }
-
-    // Tanggal hari ini (ID)
-    function formatToday(){
-      const d = new Date();
-      const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
-      const dd = String(d.getDate()).padStart(2,'0');
-      const mm = String(d.getMonth()+1).padStart(2,'0');
-      const yyyy = d.getFullYear();
-      return `${days[d.getDay()]}, ${dd}-${mm}-${yyyy}`;
-    }
-
-    // Header tanggal
-    document.getElementById('today').textContent = formatToday();
-
-    // Render awal
-    renderCards();
-
-    // Ubah jumlah digit
-    digitSelect.addEventListener('change', ()=>{
-      renderCards();
-    });
-
-    // SPIN semua kartu
-    document.getElementById('spinAll').addEventListener('click', ()=>{
-      // trigger klik SPIN masing-masing card
-      document.querySelectorAll('.card .actions button:first-child').forEach(btn=> btn.click());
+    games.forEach(name=>{
+      const card=document.createElement('div'); card.className='card';
+      const h3=document.createElement('h3'); h3.textContent=name;
+      const sub=document.createElement('div'); sub.className='sub'; sub.textContent=new Date().toLocaleDateString('id-ID');
+      const link=document.createElement('a'); link.href='#'; link.className='link'; link.textContent='Prediksi ' + name;
+      const chips=document.createElement('div'); chips.className='chips'; randomDigits(4).forEach(n=>chips.appendChild(chip(n)));
+      const actions=document.createElement('div'); actions.className='actions';
+      const btnSpin=document.createElement('button'); btnSpin.textContent='SPIN';
+      btnSpin.onclick=()=>{
+        chips.innerHTML=''; randomDigits(4).forEach(n=>chips.appendChild(chip(n)));
+        list.innerHTML=''; makeCombos(4).forEach(s=>{const r=document.createElement('div'); r.className='row'; r.textContent=s; list.appendChild(r);});
+      };
+      const btnFull=document.createElement('button'); btnFull.textContent='FULL'; btnFull.className='ghost'; btnFull.onclick=()=>{full.style.display=full.style.display==='block'?'none':'block'};
+      actions.append(btnSpin,btnFull);
+      const full=document.createElement('div'); full.className='full'; const list=document.createElement('div'); list.className='rows'; makeCombos(4).forEach(s=>{const r=document.createElement('div'); r.className='row'; r.textContent=s; list.appendChild(r);}); full.appendChild(list);
+      card.append(h3,sub,link,chips,actions,full); grid.appendChild(card);
     });
   </script>
 </body>
