@@ -1,24 +1,38 @@
-# Verifikasi Akun DANA Premium
+# Prediksi Togel Cambodia — Template Web HTML
 
-Panduan lengkap untuk meng-upgrade akun DANA menjadi **Premium** dan mendapatkan fitur lengkap.
+**Deskripsi Singkat**  
+Template halaman web statis untuk menampilkan prediksi togel harian (seperti Angka Main, Colok Bebas, Kepala, Ekor, Shio, Angka Jitu, dan Jadwal Pasaran) — ideal sebagai dasar untuk pengembangan lebih lanjut secara personal atau edukatif.
 
-## Langkah-Langkah Verifikasi Akun DANA ke Premium
-1. Buka aplikasi DANA dan tap menu **Saya**.
-2. Pilih **"Verifikasi Akun Anda"** atau **"Upgrade to Premium"**.:contentReference[oaicite:13]{index=13}  
-3. Foto KTP (pastikan jelas) atau gunakan dokumen alternatif (SIM, paspor, dll).:contentReference[oaicite:14]{index=14}  
-4. Lakukan foto selfie verifikasi wajah sesuai instruksi.:contentReference[oaicite:15]{index=15}  
-5. Masukkan nomor identitas tambahan jika diminta, lalu kirim.  
-6. Tunggu hingga proses selesai (biasanya maksimal 2 hari kerja).:contentReference[oaicite:16]{index=16}  
-7. Setelah diterima, akun mu akan menjadi **Premium**.
-8.
+---
 
-### Fitur:
-- Verifikasi Akun DANA Premium.
-- Paket dengan umur akun dana : 1,tahun, 2,tahun, dan 3,tahun.
-- Formulir pemesanan yang mudah diisi.
-- Desain responsif yang dapat diakses di berbagai perangkat (desktop, tablet, dan mobile).
-- Gambar produk untuk setiap paket verifikasi yang jelas.
+##  Tabel Isi
+1. [Fitur](#fitur)  
+2. [Demo](#demo)  
+3. [Instalasi](#instalasi)  
+4. [Struktur Proyek](#struktur-proyek)  
+5. [Teknologi Digunakan](#teknologi-digunakan)  
+6. [Kontribusi](#kontribusi)  
+7. [Lisensi](#lisensi)  
+8. [Kontak](#kontak)
 
-## Catatan Penting
-- Setiap KTP hanya untuk satu akun. Jika bermasalah, hubungi CS.:contentReference[oaicite:23]{index=23}  
-- Jika verifikasi gagal, pastikan kualitas foto dan identitas yang dipakai.
+---
+
+##  Fitur
+- Tampilan prediksi dalam format **grid dua kolom**.
+- Tabel **Angka Jitu 2D** dan **Jadwal Pasaran**.
+- Layout sederhana dan responsif.
+- Mudah dikembangkan atau diintegrasikan ke dalam CMS atau situs dinamis.
+
+---
+
+##  Demo
+Anda dapat melihat tampilan live template di:  
+`https://username.github.io/prediksi-togel-cambodia/` *(jika dihosting via GitHub Pages)*
+
+---
+
+##  Instalasi
+1. **Clone repositori ini**
+   ```bash
+   git clone https://github.com/username/prediksi-togel-template.git
+   cd prediksi-togel-template
