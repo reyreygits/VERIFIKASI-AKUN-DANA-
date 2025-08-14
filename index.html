@@ -16,7 +16,51 @@
       --muted:#c0c0c0;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 18px;
-    }
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background-color: var(--bg);
+  padding: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left-side,
+.right-side {
+  flex: 1;
+}
+
+.logo-container {
+  text-align: center;
+  flex: 2;
+}
+
+.logo-container img {
+  height: 160px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.logo-caption {
+  font-size: 1.5rem;
+  color: var(--accent);
+  font-weight: bold;
+}   
+
+ }
     *{box-sizing:border-box}
     body{
       margin:0; font-family:Arial, sans-serif;
