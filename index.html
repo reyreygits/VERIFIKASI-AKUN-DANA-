@@ -1,129 +1,142 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jadwal Bola – GLORYGAME99</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jadwal Bola Hari Ini – GLORYGAME99</title>
   <style>
+    /* Palet warna */
     :root {
-      --bg: #e0e0e0;
+      --bg-blue: #0057e7;
       --panel-bg: #ffffff;
-      --text: #222;
+      --text-color: #333333;
       --header-bg: #ffd700;
-      --link: #0066cc;
+      --link-color: #0057e7;
+      --link-hover: #003eb3;
+      --footer-bg: #ffd700;
     }
-    html[data-theme="dark"] {
-      --bg: #121212;
-      --panel-bg: #1e1e1e;
-      --text: #e0e0e0;
-      --header-bg: #444;
-      --link: #63a4ff;
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
       font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
+      background-color: var(--bg-blue);
+      color: var(--text-color);
+      min-height: 100vh;
     }
+
     header {
-      background: var(--header-bg);
+      background-color: var(--header-bg);
       padding: 20px;
       text-align: center;
-      position: relative;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
     }
-    header .toggle {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      width: 28px;
-      height: 28px;
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.2rem;
-    }
+
     .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 20px;
-      background: var(--panel-bg);
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: background 0.3s;
+      max-width: 1100px;
+      margin: 40px auto;
+      background-color: var(--panel-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
     }
+
     th, td {
-      padding: 12px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+      font-weight: 600;
+      border-bottom: 3px solid var(--bg-blue);
+    }
+
+    td {
       border-bottom: 1px solid #ccc;
     }
-    th {
-      background: #dfdfdf;
+
+    td.tanggal {
+      color: red;
+      font-weight: 600;
     }
-    td.tanggal { color: red; font-weight: bold; }
+
     a {
-      color: var(--link);
+      color: var(--link-color);
       text-decoration: none;
-      transition: color 0.2s;
+      font-weight: bold;
+      transition: color 0.2s ease;
     }
-    a:hover { color: darken(var(--link), 20%); }
+
+    a:hover {
+      color: var(--link-hover);
+    }
+
     footer {
+      background-color: var(--footer-bg);
+      color: #333;
       text-align: center;
-      padding: 15px;
-      background: var(--panel-bg);
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      margin-top: 40px;
       font-size: 0.9rem;
+      border-top: 2px solid var(--bg-blue);
     }
   </style>
 </head>
 <body>
   <header>
     Jadwal Bola Hari Ini – GLORYGAME99
-    <button class="toggle" id="toggleBtn">🌓</button>
   </header>
+
   <div class="container">
-    <h3>Jadwal Kompetisi Sepak Bola</h3>
+    <h3 style="margin-bottom: 20px; text-align: center;">Jadwal Kompetisi Sepak Bola</h3>
     <table>
       <thead>
         <tr>
-          <th>Tanggal</th><th>Waktu</th><th>Tim Tuan Rumah</th>
-          <th>Tim Tamu</th><th>Kompetisi</th><th>Link</th>
+          <th>Tanggal</th>
+          <th>Waktu</th>
+          <th>Tim Tuan Rumah</th>
+          <th>Tim Tamu</th>
+          <th>Kompetisi</th>
+          <th>Link</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="tanggal">2025-08-15</td><td>20:00</td>
-          <td>Persija Jakarta</td><td>Arema FC</td>
-          <td>Liga 1 Indonesia</td><td><a href="#">BETING SEKARANG</a></td>
+          <td class="tanggal">2025-08-15</td>
+          <td>20:00</td>
+          <td>Persija Jakarta</td>
+          <td>Arema FC</td>
+          <td>Liga 1 Indonesia</td>
+          <td><a href="#">BETING SEKARANG</a></td>
         </tr>
         <tr>
-          <td class="tanggal">2025-08-15</td><td>22:00</td>
-          <td>PSM Makassar</td><td>Persib Bandung</td>
-          <td>Liga 1 Indonesia</td><td><a href="#">BETING SEKARANG</a></td>
+          <td class="tanggal">2025-08-15</td>
+          <td>22:00</td>
+          <td>PSM Makassar</td>
+          <td>Persib Bandung</td>
+          <td>Liga 1 Indonesia</td>
+          <td><a href="#">BETING SEKARANG</a></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <footer>&copy; GLORYGAME99</footer>
 
-  <script>
-    const btn = document.getElementById('toggleBtn');
-    const current = localStorage.getItem('theme');
-    if (current) document.documentElement.setAttribute('data-theme', current);
-
-    btn.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-    });
-  </script>
+  <footer>
+    &copy; 2025 GLORYGAME99
+  </footer>
 </body>
 </html>
