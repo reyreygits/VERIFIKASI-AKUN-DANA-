@@ -1,91 +1,119 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mystery Box</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal Bola Hari Ini - PAPANATASSLOT</title>
   <style>
     body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #222;
       font-family: Arial, sans-serif;
-      color: #fff;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
-
-    .box-container {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      cursor: pointer;
-      perspective: 600px;
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
     }
-
-    .mystery-box {
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
       width: 100%;
-      height: 100%;
-      background: #444;
-      border: 5px solid #666;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 3rem;
-      transition: transform 0.6s ease;
-      transform-style: preserve-3d;
-      position: relative;
+      border-collapse: collapse;
+      margin-bottom: 20px;
     }
-
-    .mystery-box.open {
-      transform: rotateX(-80deg) translateY(-30%);
-      background: #555;
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
     }
-
-    .item {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      font-size: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+    th {
+      background-color: #f2f2f2;
     }
-
-    .item.show {
-      opacity: 1;
-      transform: translate(-50%, -150%) scale(1);
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
     }
   </style>
 </head>
 <body>
 
-<div class="box-container" id="boxContainer">
-  <div class="mystery-box" id="box">?</div>
-  <div class="item" id="item"></div>
+<header>
+  <h1>Jadwal Bola Hari Ini</h1>
+</header>
+
+<div class="container">
+  <h2>Kompetisi Sepak Bola</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Waktu</th>
+        <th>Tim Tuan Rumah</th>
+        <th>Tim Tamu</th>
+        <th>Kompetisi</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data pertandingan akan dimuat di sini -->
+    </tbody>
+  </table>
 </div>
 
+<footer>
+  <p>&copy; PAPANATASSLOT. Semua hak dilindungi.</p>
+</footer>
+
 <script>
-  const items = [
-    "⭐ Emas!",
-    "🍀 Keberuntungan!",
-    "💎 Permata!",
-    "🎁 Hadiah Misteri!",
-    "✨ Kejutan Spesial!"
+  // Data pertandingan sepak bola
+  const matches = [
+    {
+      date: '2025-08-15',
+      time: '20:00',
+      homeTeam: 'Persija Jakarta',
+      awayTeam: 'Arema FC',
+      competition: 'Liga 1 Indonesia',
+      link: 'https://www.vidio.com/live/17626'
+    },
+    {
+      date: '2025-08-15',
+      time: '22:00',
+      homeTeam: 'PSM Makassar',
+      awayTeam: 'Persib Bandung',
+      competition: 'Liga 1 Indonesia',
+      link: 'https://www.vidio.com/live/17627'
+    }
+    // Tambahkan data pertandingan lainnya di sini
   ];
 
-  const boxContainer = document.getElementById('boxContainer');
-  const box = document.getElementById('box');
-  const itemDiv = document.getElementById('item');
-
-  boxContainer.addEventListener('click', () => {
-    box.classList.add('open');
-    const choice = items[Math.floor(Math.random() * items.length)];
-    itemDiv.textContent = choice;
-    itemDiv.classList.add('show');
+  // Menampilkan data pertandingan ke dalam tabel
+  const tbody = document.querySelector('tbody');
+  matches.forEach(match => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${match.date}</td>
+      <td>${match.time}</td>
+      <td>${match.homeTeam}</td>
+      <td>${match.awayTeam}</td>
+      <td>${match.competition}</td>
+      <td><a href="${match.link}" target="_blank">Tonton</a></td>
+    `;
+    tbody.appendChild(row);
   });
 </script>
 
