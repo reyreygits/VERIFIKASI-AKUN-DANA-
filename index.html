@@ -1,121 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jadwal Bola Hari Ini - PAPANATASSLOT</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0000FF;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: yellow;
-      color: black;
-      padding: 10px 0;
-      text-align: center;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-  td.tanggal Waktu Tim Tuan Rumah	Tim Tamu Kompetisi	Link{
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jadwal Bola Hari Ini - PAPANATASSLOT</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0000FF; /* Biru */
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: yellow; /* Kuning */
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  /* Warna teks tanggal jadi merah */
+  td.tanggal {
     color: red;
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-  </style>
+  }
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+</style>
 </head>
 <body>
-
 <header>
   <h1>Jadwal Bola Hari Ini</h1>
 </header>
-
 <div class="container">
-  <h2>Kompetisi Sepak Bola</h2>
+  <h3>Kompetisi Sepak Bola</h3>
   <table>
     <thead>
       <tr>
         <th>Tanggal</th>
         <th>Waktu</th>
-        <th>PERTANDINGAN</th>
-        <th>PROVEDER</th>
+        <th>Tim Tuan Rumah</th>
+        <th>Tim Tamu</th>
         <th>Kompetisi</th>
         <th>Link</th>
       </tr>
     </thead>
     <tbody>
-      <!-- Data pertandingan akan dimuat di sini -->
+      <tr>
+        <td class="tanggal">2025-08-15</td>
+        <td>20:00</td>
+        <td>Persija Jakarta</td>
+        <td>Arema FC</td>
+        <td>Liga 1 Indonesia</td>
+        <td><a href="#">BETING SEKARANG</a></td>
+      </tr>
+      <tr>
+        <td class="tanggal">2025-08-15</td>
+        <td>22:00</td>
+        <td>PSM Makassar</td>
+        <td>Persib Bandung</td>
+        <td>Liga 1 Indonesia</td>
+        <td><a href="#">BETING SEKARANG</a></td>
+      </tr>
     </tbody>
   </table>
 </div>
-
+<footer>
+  &copy; GLORYGAME99
 </footer>
-
-<script>
-  // Data pertandingan sepak bola
-  const matches = [
-    {
-      Tanggal: '2025-08-15',
-      Waktu: '20:00',
-      PERTANDINGAN: 'ARIP VS DANNIL',
-      PROVEDER: 'SBO SLOT',
-      Kompetisi: 'Liga 1 Indonesia',
-      link: 'https://www.vidio.com/live/17626'
-  </tr>
-      <tr>
-      Tanggal: '2025-08-15',
-      Waktu: '22:00',
-      PERTANDINGAN: ''ARIP VS DANNIL',
-      PROVEDER: 'SBO SLOT',
-      competition: 'Liga 1 Indonesia',
-      link: 'https://www.vidio.com/live/17627'
-    }
-    // Tambahkan data pertandingan lainnya di sini
-  ];
-
-  // Menampilkan data pertandingan ke dalam tabel
-  const tbody = document.querySelector('tbody');
-  matches.forEach(match => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${match.date}</td>
-      <td>${match.time}</td>
-      <td>${match.homeTeam}</td>
-      <td>${match.awayTeam}</td>
-      <td>${match.competition}</td>
-      <td><a href="${match.link}" target="_blank">BETING SEKARANG</a></td>
-    `;
-    tbody.appendChild(row);
-  });
-</script>
-
 </body>
 </html>
