@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jadwal Bola – GLORYGAME99</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jadwal Bola Hari Ini – GLORYGAME99</title>
   <style>
+    /* Warna Tema */
     :root {
       --bg-blue: #0057e7;
-      --panel-bg: #fff;
-      --text-color: #333;
+      --panel-bg: #ffffff;
+      --text-color: #333333;
       --header-bg: #ffd700;
       --link-color: #0057e7;
       --link-hover: #003eb3;
       --footer-bg: #ffd700;
     }
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background: var(--bg-blue);
       color: var(--text-color);
       min-height: 100vh;
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
+
     header {
       background: var(--header-bg);
       padding: 16px;
@@ -30,6 +39,7 @@
       font-weight: bold;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
+
     .container {
       width: 95%;
       margin: 20px auto;
@@ -37,59 +47,94 @@
       padding: 16px;
       border-radius: 10px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      overflow-x: auto; /* scroll bila lebar tabel melebihi kontainer */
     }
-    h3 {
-      text-align: center;
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.95rem;
     }
+
     th, td {
       padding: 10px 8px;
-      text-align: left;
       border: 1px solid #ccc;
-      word-break: break-word;
+      text-align: left;
     }
+
     th {
       background: #f5f5f5;
-      font-weight: 600;
+      font-weight: bold;
     }
+
     td.tanggal {
       color: red;
-      font-weight: 600;
+      font-weight: bold;
     }
+
     a {
       color: var(--link-color);
       font-weight: bold;
       text-decoration: none;
     }
+
     a:hover {
       color: var(--link-hover);
     }
+
+    /* Responsif untuk perangkat dengan lebar layar maksimal 600px */
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #fafafa;
+        padding: 10px;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+    }
+
     footer {
       background: var(--footer-bg);
-      text-align: center;
       padding: 12px 0;
+      text-align: center;
       font-size: 0.9rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
       margin-top: auto;
-    }
-    @media (max-width: 480px) {
-      th, td { padding: 8px 4px; font-size: 0.8rem; }
-      header { font-size: 1.1rem; padding: 12px; }
-      h3 { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
+
   <header>Jadwal Bola Hari Ini – GLORYGAME99</header>
+
   <div class="container">
-    <h3>Jadwal Kompetisi Sepak Bola</h3>
+    <h3 style="margin-bottom:12px;">Jadwal Kompetisi Sepak Bola</h3>
     <table>
       <thead>
         <tr>
@@ -99,20 +144,30 @@
       </thead>
       <tbody>
         <tr>
-          <td class="tanggal">2025-08-15</td>
-          <td>20:00</td><td>Persija Jakarta</td><td>Arema FC</td>
-          <td>Liga 1 Indonesia</td>
-          <td><a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank" rel="noopener noreferrer">BETING SEKARANG</a></td>
+          <td class="tanggal" data-label="Tanggal">2025-08-15</td>
+          <td data-label="Waktu">20:00</td>
+          <td data-label="Tuan Rumah">Persija Jakarta</td>
+          <td data-label="Tim Tamu">Arema FC</td>
+          <td data-label="Kompetisi">Liga 1 Indonesia</td>
+          <td data-label="Aksi">
+            <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank">BETING SEKARANG</a>
+          </td>
         </tr>
         <tr>
-          <td class="tanggal">2025-08-15</td>
-          <td>22:00</td><td>PSM Makassar</td><td>Persib Bandung</td>
-          <td>Liga 1 Indonesia</td>
-          <td><a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank" rel="noopener noreferrer">BETING SEKARANG</a></td>
+          <td class="tanggal" data-label="Tanggal">2025-08-15</td>
+          <td data-label="Waktu">22:00</td>
+          <td data-label="Tuan Rumah">PSM Makassar</td>
+          <td data-label="Tim Tamu">Persib Bandung</td>
+          <td data-label="Kompetisi">Liga 1 Indonesia</td>
+          <td data-label="Aksi">
+            <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank">BETING SEKARANG</a>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+
   <footer>&copy; 2025 GLORYGAME99</footer>
+
 </body>
 </html>
