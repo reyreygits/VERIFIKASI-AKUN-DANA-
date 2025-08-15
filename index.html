@@ -1,63 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jadwal Bola Hari Ini -GLORYGAME99</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #0000FF; /* Biru */
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    background-color: yellow; /* Kuning */
-    color: black;
-    padding: 10px 0;
-    text-align: center;
-  }
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  th {
-    background-color: #f2f2f2;
-  }
-  /* Warna teks tanggal jadi merah */
-  td.Tanggal{
-    color: red;
-  }
-  footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jadwal Bola Hari Ini – GLORYGAME99</title>
+  <style>
+    /* Variabel tema */
+    :root {
+      --bg-color: #0000FF;
+      --panel-bg: white;
+      --text-color: black;
+      --header-bg: yellow;
+      --header-text: black;
+      --footer-bg: #333;
+      --footer-text: white;
+    }
+    html[data-theme="dark"] {
+      --bg-color: #1a1a2e;
+      --panel-bg: #2e2e3e;
+      --text-color: #ddd;
+      --header-bg: #444;
+      --header-text: #fff;
+      --footer-bg: #111;
+      --footer-text: #bbb;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    .toggle-container {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+    .toggle-container input {
+      opacity: 0;
+      position: absolute;
+    }
+    .toggle-container label {
+      cursor: pointer;
+      text-indent: -9999px;
+      width: 50px;
+      height: 28px;
+      background: gray;
+      display: block;
+      border-radius: 14px;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+    .toggle-container label:after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .toggle-container input:checked + label {
+      background: #666;
+    }
+    .toggle-container input:checked + label:after {
+      transform: translateX(22px);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 25px;
+      background: var(--panel-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #aaa;
+    }
+    th {
+      background: #ddd;
+    }
+    td.tanggal {
+      color: red;
+      font-weight: bold;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #003d80;
+    }
+    footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    }
+  </style>
 </head>
 <body>
+
 <header>
-  <h1>Jadwal Bola Hari Ini Glorygame99</h1>
+  Jadwal Bola Hari Ini – GLORYGAME99
+  <div class="toggle-container">
+    <input type="checkbox" id="theme-switch">
+    <label for="theme-switch">Toggle</label>
+  </div>
 </header>
+
 <div class="container">
   <h3>Jadwal Kompetisi Sepak Bola</h3>
   <table>
@@ -65,8 +143,8 @@
       <tr>
         <th>Tanggal</th>
         <th>Waktu</th>
-        <th>TIM YANG BERTANDING</th>
-        <th>PROVEDER</th>
+        <th>Tim Tuan Rumah</th>
+        <th>Tim Tamu</th>
         <th>Kompetisi</th>
         <th>Link</th>
       </tr>
@@ -91,8 +169,24 @@
     </tbody>
   </table>
 </div>
+
 <footer>
   &copy; GLORYGAME99
 </footer>
+
+<script>
+  const toggle = document.getElementById('theme-switch');
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggle.checked = currentTheme === 'dark';
+  }
+  toggle.addEventListener('change', () => {
+    const theme = toggle.checked ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  });
+</script>
+
 </body>
 </html>
