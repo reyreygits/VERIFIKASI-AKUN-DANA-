@@ -3,108 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prediksi Setiap Hari – GloryGame99</title>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <title>Mystery Box</title>
   <style>
-    :root {
-      --bg: #0a0d2c; --panel: #1c224a; --card: #2d3b7a; --card2: #3c4c9e;
-      --accent: #ffcc00; --accent-2: #00bfff; --text: #ffffff;
-      --muted: #c0c0c0; --shadow: 0 10px 30px rgba(0,0,0,.35); --radius: 18px;
-    }
-    * { box-sizing: border-box; }
-    body, html {
-      margin: 0; padding: 0;
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #222;
+      color: #fff;
       font-family: Arial, sans-serif;
-      background: var(--bg); color: var(--text);
-      height: 100%; overflow-x: hidden;
     }
-    #particles-js {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-    }
-    .register-box, header, .grid {
+    .mystery-box {
       position: relative;
-      z-index: 1;
+      width: 200px;
+      height: 200px;
+      background: #444;
+      border: 4px solid #888;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      transition: transform 0.3s;
     }
-    .register-box {
-      display: flex; justify-content: center;
-      background: var(--panel); padding: 16px;
+    .mystery-box:hover {
+      transform: scale(1.05);
     }
-    .register-button {
-      background-color: var(--accent-2); color: #000;
-      padding: 14px 24px; font-weight: bold; font-size: 1rem;
-      border-radius: 12px; text-decoration: none;
-      box-shadow: var(--shadow); transition: background-color 0.3s ease;
+    .item {
+      position: absolute;
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.5s;
     }
-    .register-button:hover { background-color: #0099cc; }
-    header { padding: 20px 0; }
-    .header-content {
-      display: flex; justify-content: space-between; align-items: center;
-      max-width: 1200px; margin: 0 auto;
-    }
-    .left-side, .right-side { flex: 1; }
-    .logo-container { flex: 2; text-align: center; }
-    .logo-container img {
-      height: 160px; width: auto; margin-bottom: 10px; display: inline-block;
-    }
-    .logo-caption {
-      font-size: 1.5rem; color: var(--accent); font-weight: bold;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px; padding: 20px; max-width: 1200px; margin: 0 auto 40px;
-    }
-    .card {
-      background: var(--card); border: 1px solid var(--card2);
-      border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow);
-    }
-    .card h3 { margin: 0 0 6px; font-size: 18px; color: var(--accent); }
-    .sub { opacity: .85; font-size: 12px; color: var(--muted); }
-    .link { font-weight: 700; color: var(--accent-2); text-decoration: none; font-size: 12px; }
-    .chips { display: flex; gap: 10px; margin: 12px 0 10px; flex-wrap: wrap; }
-    .chip {
-      width: 40px; height: 40px; border-radius: 50%;
-      display: grid; place-items: center; font-weight: 800;
-      background: var(--accent-2); color: #000;
-    }
-    .actions { display: flex; gap: 10px; }
-    button {
-      cursor: pointer; padding: 10px 14px; border-radius: 12px;
-      font-weight: 800; background: var(--accent); color: #000; border: none;
-    }
-    .ghost {
-      background: transparent; border: 1px solid var(--accent); color: var(--accent);
-    }
-    .full {
-      margin-top: 10px; display: none; background: rgba(0,0,0,.25);
-      padding: 10px; border-radius: 12px;
-    }
-    .rows {
-      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;
-    }
-    .row {
-      background: rgba(255,255,255,.05); padding: 8px 10px;
-      border-radius: 10px; font-weight: 700;
+    .item.show {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-  <div class="register-box">
-    <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" class="register-button">Klik Daftar Sekarang</a>
-  </div>
-  <header>
-    <div class="header-content">
-      <div class="left-side"></div>
-      <div class="logo-container">
-        <img src="images/logo2.png" alt="Logo GloryGame99" />
-        <div class="logo-caption">Update Prediksi Togel Setiap Hari – GloryGame99</div>
-      </div>
-      <div class="right-side"></div>
-    </div>
-  </header>
-  <div class="grid" id="grid"></div>
-  <script>v
+  <div class="mystery-box" id="box">?</div>
+  <div class="item" id="item"></div>
+
+  <script>
+    const items = [
+      "⭐ Emas!",
+      "🍀 Keberuntungan!",
+      "💎 Permata!",
+      "🎁 Hadiah Misteri!",
+      "✨ Kejutan Spesial!"
+    ];
+    const box = document.getElementById('box');
+    const itemDiv = document.getElementById('item');
+
+    box.addEventListener('click', () => {
+      const choice = items[Math.floor(Math.random() * items.length)];
+      itemDiv.textContent = choice;
+      itemDiv.classList.add('show');
+      box.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
