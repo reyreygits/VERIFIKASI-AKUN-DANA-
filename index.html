@@ -17,17 +17,17 @@
     }
     .mystery-box {
       position: relative;
-      width: 200px;
-      height: 200px;
-      background: #444;
+      width: 180px;
+      height: 180px;
+      background: #555;
       border: 4px solid #888;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
       cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2rem;
+      font-size: 3rem;
       transition: transform 0.3s;
     }
     .mystery-box:hover {
@@ -37,10 +37,11 @@
       position: absolute;
       font-size: 1.5rem;
       opacity: 0;
-      transition: opacity 0.5s;
+      transition: opacity 0.6s, transform 0.6s;
     }
     .item.show {
       opacity: 1;
+      transform: translateY(-20px);
     }
   </style>
 </head>
@@ -49,13 +50,7 @@
   <div class="item" id="item"></div>
 
   <script>
-    const items = [
-      "⭐ Emas!",
-      "🍀 Keberuntungan!",
-      "💎 Permata!",
-      "🎁 Hadiah Misteri!",
-      "✨ Kejutan Spesial!"
-    ];
+    const items = ["⭐ Emas!", "🍀 Keberuntungan!", "💎 Permata!", "🎁 Hadiah Misteri!", "✨ Kejutan Spesial!"];
     const box = document.getElementById('box');
     const itemDiv = document.getElementById('item');
 
@@ -63,7 +58,7 @@
       const choice = items[Math.floor(Math.random() * items.length)];
       itemDiv.textContent = choice;
       itemDiv.classList.add('show');
-      box.style.display = 'none';
+      box.style.display = 'none'; // hilangkan kotak setelah dipilih
     });
   </script>
 </body>
