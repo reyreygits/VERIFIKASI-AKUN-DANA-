@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jadwal Bola Hari Ini – GLORYGAME99</title>
   <style>
-    /* Palet warna */
     :root {
       --bg-blue: #0057e7;
       --panel-bg: #ffffff;
@@ -27,6 +26,8 @@
       background-color: var(--bg-blue);
       color: var(--text-color);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -36,7 +37,6 @@
       font-size: 1.7rem;
       font-weight: bold;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      position: relative;
       z-index: 1;
     }
 
@@ -47,11 +47,13 @@
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      flex: 1;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 20px;
     }
 
     th, td {
@@ -90,9 +92,25 @@
       color: #333;
       text-align: center;
       padding: 15px 0;
-      margin-top: 40px;
       font-size: 0.9rem;
       border-top: 2px solid var(--bg-blue);
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.3rem;
+      }
+
+      th, td {
+        padding: 10px 6px;
+        font-size: 0.9rem;
+      }
+
+      .container {
+        padding: 15px;
+        margin: 20px;
+      }
     }
   </style>
 </head>
@@ -111,7 +129,7 @@
           <th>Tim Tuan Rumah</th>
           <th>Tim Tamu</th>
           <th>Kompetisi</th>
-          <th>Link</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
@@ -121,7 +139,11 @@
           <td>Persija Jakarta</td>
           <td>Arema FC</td>
           <td>Liga 1 Indonesia</td>
-          <td><a href="#">BETING SEKARANG</a></td>
+          <td>
+            <a href="https://contoh-link.com" target="_blank" rel="noopener noreferrer">
+              BETING SEKARANG
+            </a>
+          </td>
         </tr>
         <tr>
           <td class="tanggal">2025-08-15</td>
@@ -129,7 +151,11 @@
           <td>PSM Makassar</td>
           <td>Persib Bandung</td>
           <td>Liga 1 Indonesia</td>
-          <td><a href="#">BETING SEKARANG</a></td>
+          <td>
+            <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank" rel="noopener noreferrer">
+              BETING SEKARANG
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
