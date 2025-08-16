@@ -14,6 +14,7 @@
       display: flex;
       flex-direction: column;
       background: linear-gradient(to bottom, #ffd700 50px, #0057e7 0);
+      position: relative;
     }
 
     /* Header kuning sebagai lapisan atas */
@@ -26,15 +27,19 @@
       color: #000;
     }
 
-    /* Konten utama dengan background putih, ditempatkan di atas biru */
+    /* Konten utama dengan background putih, ditempatkan di atas biru dan diposisikan tengah */
     .card {
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 380px;
-      margin: -20px auto 20px;
       padding: 24px;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .card h1 {
@@ -84,12 +89,14 @@
 
     /* Footer sebagai lapisan biru bawah */
     footer {
-      margin-top: auto;
       background-color: #0057e7;
       padding: 12px;
       text-align: center;
       font-size: 0.9rem;
       color: #fff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
